@@ -1,2 +1,2 @@
 require("Miszka.remap")
-print("Hello from Miszka")
+require("Miszka.sets")

@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use { "catppuccin/nvim", as = "catppuccin" }  
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use {
 	  'nvim-treesitter/nvim-treesitter',
@@ -26,4 +26,16 @@ return require('packer').startup(function(use)
 
   use { "tpope/vim-fugitive" }
 
+  use {
+	  "williamboman/mason.nvim",
+	  "williamboman/mason-lspconfig.nvim",
+	  "neovim/nvim-lspconfig",
+  }
+
+  use {
+	  'hrsh7th/nvim-cmp',
+	  'hrsh7th/cmp-nvim-lsp'}
+
+  use { 'ThePrimeagen/vim-be-good' }
 end)
+
