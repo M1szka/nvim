@@ -18,7 +18,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {'html', 'cssls', 'lua_ls', 'pylsp', 'emmet_language_server', 'lwc_ls'},
+  ensure_installed = {'ts_ls', 'html', 'cssls', 'lua_ls', 'pylsp', 'emmet_language_server', 'lwc_ls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -75,10 +75,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').pylsp.setup({})
 require('lspconfig').emmet_language_server.setup({})
-require('lspconfig').lwc_ls.setup({})
+--require('lspconfig').ts_ls.setup({})
+--require('lspconfig').lwc_ls.setup({})
 --require('lspconfig').tailwindcss.setup({})
-require('lspconfig').cssls.setup({})
-require('lspconfig').html.setup({})
+--require('lspconfig').cssls.setup({})
+--require('lspconfig').html.setup({})
 
 local cmp = require('cmp')
 
