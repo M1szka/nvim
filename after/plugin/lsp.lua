@@ -18,7 +18,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {'lua_ls', 'pylsp', 'emmet_language_server'},
+  ensure_installed = {'lua_ls', 'pylsp', 'emmet_language_server', 'clangd'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
     vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+    vim.keymap.set('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
@@ -75,6 +75,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 require('lspconfig').lua_ls.setup({})
 require('lspconfig').pylsp.setup({})
 require('lspconfig').emmet_language_server.setup({})
+require('lspconfig').clangd.setup({})
 --require('lspconfig').ts_ls.setup({})
 --require('lspconfig').lwc_ls.setup({})
 --require('lspconfig').tailwindcss.setup({})

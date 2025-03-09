@@ -54,5 +54,9 @@ use({
 	run = "make install_jsregexp"
 })
 
+use {
+    "tpope/vim-repeat",
+    "ggandor/leap.nvim"}
+
 end)
 
