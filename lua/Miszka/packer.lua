@@ -58,5 +58,13 @@ use {
     "tpope/vim-repeat",
     "ggandor/leap.nvim"}
 
+-- use { 'preservim/nerdtree' }
+
+use { "ellisonleao/gruvbox.nvim" }
+
+use {
+    "vim-airline/vim-airline",
+    "vim-airline/vim-airline-themes"}
+
 end)
 

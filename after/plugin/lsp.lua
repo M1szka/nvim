@@ -3,7 +3,7 @@
 -- https://www.youtube.com/watch?v=LaS32vctfOY
 
 -- Reserve a space in the gutter
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'no'
 
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
@@ -46,6 +46,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 vim.diagnostic.config({
+  virtual_text = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = 'X',
