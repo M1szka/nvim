@@ -66,5 +66,9 @@ use {
     "vim-airline/vim-airline",
     "vim-airline/vim-airline-themes"}
 
+use { 'AlexvZyl/nordic.nvim' }
+
+use 'mfussenegger/nvim-lint'
+
 end)
 

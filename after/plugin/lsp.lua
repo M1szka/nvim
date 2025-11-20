@@ -18,7 +18,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {'lua_ls', 'pylsp', 'emmet_language_server', 'clangd', 'rust_analyzer', 'bashls', 'cssls', 'svelte'},
+  ensure_installed = {'lua_ls', 'pylsp', 'emmet_language_server', 'clangd', 'rust_analyzer', 'bashls', 'cssls', 'svelte', 'gopls', 'marksman', 'superhtml'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -84,6 +84,9 @@ require('lspconfig').svelte.setup({})
 --require('lspconfig').lwc_ls.setup({})
 --require('lspconfig').tailwindcss.setup({})
 require('lspconfig').cssls.setup({})
+require('lspconfig').gopls.setup({})
+require('lspconfig').marksman.setup({})
+require('lspconfig').superhtml.setup({})
 --require('lspconfig').html.setup({})
 --require('lspconfig').tailwindcss.setup {
 --  cmd = { "tailwindcss-language-server", "--stdio" },
@@ -91,7 +94,8 @@ require('lspconfig').cssls.setup({})
 --  root_dir = require('lspconfig').util.root_pattern("tailwind.config.js", "package.json"),
 --  settings = {},
 --}
---require('lspconfig').nil_ls({})
+--require('lsp#config').nil_ls({})
+-- Set linters
 
 local cmp = require('cmp')
 
