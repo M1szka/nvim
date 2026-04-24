@@ -21,7 +21,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {'lua_ls', 'pylsp', 'emmet_language_server', 'clangd', 'rust_analyzer', 'bashls', 'cssls', 'svelte', 'gopls', 'marksman', 'superhtml'},
   handlers = {
     function(server_name)
-      require('lspconfig')[server_name].setup({})
+      vim.lsp.enable(server_name)
+      --require('lspconfig')[server_name].setup({})
     end,
   }
 })
@@ -69,7 +70,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     client.server_capabilities.semanticTokensProvider = nil
   end
 })
-
+--[[
 -- You'll find a list of language servers here:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 -- These are example language servers. 
@@ -96,7 +97,7 @@ require('lspconfig').superhtml.setup({})
 --}
 --require('lsp#config').nil_ls({})
 -- Set linters
-
+--]]
 local cmp = require('cmp')
 
 cmp.setup({
